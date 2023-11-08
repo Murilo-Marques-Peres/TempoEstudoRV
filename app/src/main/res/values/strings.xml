@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">New Studies Calc</string>
+    <string name="some">:</string>
+    <string name="come_o">Começo:</string>
+    <string name="fim">Fim</string>
+    <string name="fim2">Fim:</string>
+    <string name="calcular">Calcular</string>
+</resources>
