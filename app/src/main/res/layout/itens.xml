@@ -9,47 +9,57 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_red_dark"
         android:gravity="center"
-        android:text="@string/come_o">
+        android:text="@string/come_o2"
+        android:textStyle="bold"
+        >
 
     </TextView>
 
     <NumberPicker
+        android:id="@+id/primeiroNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/primeiroNumber"
-        >
+        android:solidColor="@android:color/holo_red_light">
 
     </NumberPicker>
+
     <NumberPicker
+        android:id="@+id/segundoNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/segundoNumber"
-        >
+        android:solidColor="@android:color/holo_red_light">
 
     </NumberPicker>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:background="@android:color/holo_blue_dark"
         android:gravity="center"
-        android:text="@string/fim2"
-        android:textSize="14sp">
+        android:text="@string/fim23"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:paddingStart="20sp"
+        android:paddingEnd="20sp"
+        >
 
     </TextView>
+
     <NumberPicker
+        android:id="@+id/terceiroNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/terceiroNumber"
-        >
+        android:solidColor="@android:color/holo_blue_dark">
 
     </NumberPicker>
 
     <NumberPicker
+        android:id="@+id/quartoNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/quartoNumber"
-        >
+        android:solidColor="@android:color/holo_blue_dark">
 
     </NumberPicker>
 
@@ -57,9 +67,26 @@
         android:id="@+id/buttonCalcular"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_marginStart="22sp"
+        android:backgroundTint="@android:color/holo_blue_bright"
         android:text="@string/calcular"
         android:textSize="16sp">
 
     </Button>
+
+    <TextView
+        android:id="@+id/textViewTempo"
+        android:layout_width="120sp"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20sp"
+        android:layout_marginEnd="30sp"
+        android:background="@color/purple_200"
+        android:gravity="center"
+        android:text="@string/xh_ymin"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        >
+
+    </TextView>
 
 </LinearLayout>

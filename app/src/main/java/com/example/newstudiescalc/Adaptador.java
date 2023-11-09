@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.NumberPicker;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -40,6 +41,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.NossoViewHolder> {
     public class NossoViewHolder extends RecyclerView.ViewHolder{
         NumberPicker mPrimeiraHora,mPrimeiroMinuto, mSegundaHora, mSegundoMinuto;
         Button mButtonCalcular;
+        TextView mTextViewTempo;
 
         public NossoViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,7 +61,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.NossoViewHolder> {
             mSegundoMinuto.setMaxValue(59);
             mSegundoMinuto.setMinValue(0);
 
-
+            mTextViewTempo = itemView.findViewById(R.id.textViewTempo);
 
             mButtonCalcular.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -68,11 +70,18 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.NossoViewHolder> {
                         int diferencaMinutos1 = mSegundoMinuto.getValue() - mPrimeiroMinuto.getValue();
                         int diferencaHora1 = mSegundaHora.getValue() - mPrimeiraHora.getValue();
                         Toast.makeText(view.getContext(), String.valueOf(diferencaHora1) + "H:" + String.valueOf(diferencaMinutos1) + "Min", Toast.LENGTH_LONG).show();
+                        mTextViewTempo.setText(String.valueOf(diferencaHora1) + "H:" + String.valueOf(diferencaMinutos1) + "Min");
                     }
                     if(mPrimeiroMinuto.getValue() > mSegundoMinuto.getValue()){
                         int min1 = 60 - mPrimeiroMinuto.getValue() + mSegundoMinuto.getValue();
                         int hora1 = mSegundaHora.getValue() - (mPrimeiraHora.getValue() + 1);
-                        Toast.makeText(view.getContext(), String.valueOf(hora1) + "H" + String.valueOf(min1) + "Min", Toast.LENGTH_LONG).show();
+                        mTextViewTempo.setText(String.valueOf(hora1) + "H:" + String.valueOf(min1) + "Min");
+                        Toast.makeText(view.getContext(), String.valueOf(hora1) + "H:" + String.valueOf(min1) + "Min", Toast.LENGTH_LONG).show();
+                    }
+                    if(mPrimeiroMinuto.getValue() == mSegundoMinuto.getValue()){
+                        int diferencaHora = mSegundaHora.getValue() - mPrimeiraHora.getValue();
+                        mTextViewTempo.setText(String.valueOf(diferencaHora) + "H:0Min");
+                        Toast.makeText(view.getContext(), diferencaHora + "H:" + "0Min", Toast.LENGTH_LONG).show();
                     }
 
                     //Toast.makeText(view.getContext(), String.valueOf(mPrimeiraHora.getValue()), Toast.LENGTH_LONG).show();

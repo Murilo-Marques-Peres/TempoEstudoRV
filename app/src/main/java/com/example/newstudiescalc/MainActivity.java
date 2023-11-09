@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         int x = 0;
+        setTitle("Calculadora De Intervalo De Tempo");
 
         mListTempos = new ArrayList<>();
         mListTempos.add(new Tempos(0,0,0,0));
