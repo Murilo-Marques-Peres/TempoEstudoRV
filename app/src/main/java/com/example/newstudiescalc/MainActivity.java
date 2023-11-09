@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.widget.Button;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
@@ -18,9 +19,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        int x = 0;
+
         mListTempos = new ArrayList<>();
         mListTempos.add(new Tempos(0,0,0,0));
         mListTempos.add(new Tempos(0,0,0,0));
+        mListTempos.add(new Tempos(x,x,x,x));
+        mListTempos.add(new Tempos(x,x,x,x));
+
 
         rvListagem = findViewById(R.id.rvListagem);
         rvListagem.setHasFixedSize(true);
