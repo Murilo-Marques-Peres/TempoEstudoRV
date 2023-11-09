@@ -64,7 +64,18 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.NossoViewHolder> {
             mButtonCalcular.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(view.getContext(), String.valueOf(mPrimeiraHora.getValue()), Toast.LENGTH_LONG).show();
+                    if(mPrimeiroMinuto.getValue() < mSegundoMinuto.getValue()){
+                        int diferencaMinutos1 = mSegundoMinuto.getValue() - mPrimeiroMinuto.getValue();
+                        int diferencaHora1 = mSegundaHora.getValue() - mPrimeiraHora.getValue();
+                        Toast.makeText(view.getContext(), String.valueOf(diferencaHora1) + "H:" + String.valueOf(diferencaMinutos1) + "Min", Toast.LENGTH_LONG).show();
+                    }
+                    if(mPrimeiroMinuto.getValue() > mSegundoMinuto.getValue()){
+                        int min1 = 60 - mPrimeiroMinuto.getValue() + mSegundoMinuto.getValue();
+                        int hora1 = mSegundaHora.getValue() - (mPrimeiraHora.getValue() + 1);
+                        Toast.makeText(view.getContext(), String.valueOf(hora1) + "H" + String.valueOf(min1) + "Min", Toast.LENGTH_LONG).show();
+                    }
+
+                    //Toast.makeText(view.getContext(), String.valueOf(mPrimeiraHora.getValue()), Toast.LENGTH_LONG).show();
                 }
             });
         }
